@@ -28,7 +28,7 @@ export const PostJob = () => {
     const onSubmit = (data) =>{ 
         console.log(data)
         // send data to backend API
-        fetch("http://localhost:8080/jobs/post-job", {
+        fetch("https://app-tracking-system-2.onrender.com/jobs/post-job", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(data)

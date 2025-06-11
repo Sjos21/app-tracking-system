@@ -19,7 +19,7 @@ export const Login = () => {
     const onSubmit = async (data) => {
         console.log(data)
         // send data to backend API
-        fetch("http://localhost:8080/auth/login", {
+        fetch("https://app-tracking-system-2.onrender.com/auth/login", {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

@@ -156,7 +156,7 @@ export const CandidateProfile = () => {
         }
         // console.log(newData);
 
-        fetch("http://localhost:8080/application/post-application", {
+        fetch("https://app-tracking-system-2.onrender.com/application/post-application", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(newData),

@@ -12,7 +12,7 @@ export const AllJobs = () => {
 
     useEffect( ()=>{
         try {
-            fetch("http://localhost:8080/jobs/all-jobs")
+            fetch("https://app-tracking-system-2.onrender.com/jobs/all-jobs")
                 .then(res => res.json())
                 .then(data => {
                     const newData = data.slice(0, 6);
@@ -70,7 +70,7 @@ export const AllJobs = () => {
 }
 function HandlerDeleteJob(id){
     try {
-        fetch(`http://localhost:8080/jobs/delete-job/${id}`, {
+        fetch(`https://app-tracking-system-2.onrender.com/jobs/delete-job/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

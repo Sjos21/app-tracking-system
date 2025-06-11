@@ -42,7 +42,7 @@ export const ApplicationForm = () => {
         const newData = { ...data, jobID: id };
 
         // send data to backend API
-        fetch("http://localhost:8080/application/post-application", {
+        fetch("https://app-tracking-system-2.onrender.com/application/post-application", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(newData),
@@ -53,7 +53,7 @@ export const ApplicationForm = () => {
                 setRedirect(true);
             });
 
-        fetch("http://localhost:8080/jobs/update-job-by-candidate", {
+        fetch("https://app-tracking-system-2.onrender.com/jobs/update-job-by-candidate", {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
@@ -69,7 +69,7 @@ export const ApplicationForm = () => {
                 setRedirect(true);
             });
 
-        fetch("http://localhost:8080/users/update-user-by-candidate", {
+        fetch("https://app-tracking-system-2.onrender.com/users/update-user-by-candidate", {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
@@ -88,7 +88,7 @@ export const ApplicationForm = () => {
 
     useEffect(() => {
         try {
-            fetch(`http://localhost:8080/jobs/current-job/${id}`).then((res) => res.json()).then((data) => setJob(data))
+            fetch(`https://app-tracking-system-2.onrender.com/jobs/current-job/${id}`).then((res) => res.json()).then((data) => setJob(data))
         } catch (error) {
             console.log(error);
         }

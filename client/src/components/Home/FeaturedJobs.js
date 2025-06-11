@@ -9,7 +9,7 @@ export const FeaturedJobs = () => {
 
     useEffect(() => {
         console.log("hello");
-        fetch("http://localhost:8080/jobs/all-jobs").then(res => res.json()).then(
+        fetch("https://app-tracking-system-2.onrender.com/jobs/all-jobs").then(res => res.json()).then(
             data => setJobs(data)
         );
     }, []);

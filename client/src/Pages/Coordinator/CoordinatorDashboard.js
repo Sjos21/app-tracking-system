@@ -11,9 +11,9 @@ export const CoordinatorDashboard = () => {
 
     useEffect(() => {
         try {
-            fetch(`http://localhost:8080/jobs/all-jobs`).then((res) => res.json()).then((data) => setJobs(data))
+            fetch(`https://app-tracking-system-2.onrender.com/jobs/all-jobs`).then((res) => res.json()).then((data) => setJobs(data))
 
-            fetch(`http://localhost:8080/users/all-users`).then((res) => res.json()).then((data) => {
+            fetch(`https://app-tracking-system-2.onrender.com/users/all-users`).then((res) => res.json()).then((data) => {
                 let recruiterData = data.filter((user) => user.userType === 1 );
                 setRecruiters(recruiterData);
             })

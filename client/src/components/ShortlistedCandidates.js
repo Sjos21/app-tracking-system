@@ -13,7 +13,7 @@ export const ShortlistedCandidates = () => {
     useEffect(() => {
 
         try {
-            fetch(`http://localhost:8080/application/all-application/`)
+            fetch(`https://app-tracking-system-2.onrender.com/application/all-application/`)
             .then((res) => res.json())
             .then((data) => {
                 const filterData = data.filter(item => item.applicationStatus === "shortlist"); 
@@ -28,7 +28,7 @@ export const ShortlistedCandidates = () => {
     useEffect(() => {
         function fetchData(){
             try {
-                fetch(`http://localhost:8080/users/all-users/`)
+                fetch(`https://app-tracking-system-2.onrender.com/users/all-users/`)
                 .then((res) => res.json())
                 .then((data) => {
                     const filterData = data.filter(user => {
@@ -37,7 +37,7 @@ export const ShortlistedCandidates = () => {
                     setShortlistCandidate(filterData);
                     console.log(filterData);
                 })
-                fetch(`http://localhost:8080/jobs/all-jobs/`)
+                fetch(`https://app-tracking-system-2.onrender.com/jobs/all-jobs/`)
                 .then((res) => res.json())
                 .then((data) => {
                     const filterData = data.filter(job => {

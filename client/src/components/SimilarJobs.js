@@ -8,7 +8,7 @@ export const SimilarJobs = () => {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/jobs/all-jobs").then(res => res.json()).then(
+        fetch("https://app-tracking-system-2.onrender.com/jobs/all-jobs").then(res => res.json()).then(
             data => {
                 const newData = data.slice(0, 6);
                 setJobs(newData)

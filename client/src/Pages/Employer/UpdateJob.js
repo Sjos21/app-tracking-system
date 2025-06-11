@@ -13,7 +13,7 @@ export const UpdateJob = () => {
     const initialValue = []
 
     useEffect(() => {
-        fetch(`http://localhost:8080/jobs/current-job/${id}`)
+        fetch(`https://app-tracking-system-2.onrender.com/jobs/current-job/${id}`)
             .then((res) => res.json())
             .then((result) => {
                 setJob(result);
@@ -42,7 +42,7 @@ export const UpdateJob = () => {
     })
 
     useEffect(()=> {
-        fetch(`http://localhost:8080/jobs/current-job/${id}`)
+        fetch(`https://app-tracking-system-2.onrender.com/jobs/current-job/${id}`)
             .then((res) => res.json())
             .then((result) => {
                 setJob(result);
@@ -56,7 +56,7 @@ export const UpdateJob = () => {
         console.log(data)
         
         // send data to backend API
-        fetch("http://localhost:8080/jobs/post-job", {
+        fetch("https://app-tracking-system-2.onrender.com/jobs/post-job", {
             method: "POST",
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(data)

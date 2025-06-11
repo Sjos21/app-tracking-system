@@ -43,7 +43,7 @@ export const JobDetails = () => {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:8080/jobs/current-job/${id}`).then(res => res.json()).then(
+        fetch(`https://app-tracking-system-2.onrender.com/jobs/current-job/${id}`).then(res => res.json()).then(
             data => { setJob(data); console.log(data); }
         )
     }
@@ -53,7 +53,7 @@ export const JobDetails = () => {
         if (job && job.applicants && job.applicants.length > 0) {
             const fetchApplicantsData = async () => {
                 try {
-                    const response = await fetch(`http://localhost:8080/users/all-users`);
+                    const response = await fetch(`https://app-tracking-system-2.onrender.com/users/all-users`);
                     if (!response.ok) {
                         throw new Error('Failed to fetch applicants data');
                     }
@@ -80,7 +80,7 @@ export const JobDetails = () => {
         setFile(file.name);
         const formData = new FormData();
         formData.append("resume", file);
-        fetch(`http://localhost:8080/upload/resume/${applicants._id}`, {
+        fetch(`https://app-tracking-system-2.onrender.com/upload/resume/${applicants._id}`, {
             method: "POST",
             body: formData,
         })

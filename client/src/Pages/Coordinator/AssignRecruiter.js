@@ -20,8 +20,8 @@ export const AssignRecruiter = () => {
 
     useEffect(() => {
         try {
-            fetch(`http://localhost:8080/jobs/current-job/${id}`).then((res) => res.json()).then((data) => setJob(data))
-            fetch(`http://localhost:8080/users/all-users`).then((res) => res.json()).then((data) => {
+            fetch(`https://app-tracking-system-2.onrender.com/jobs/current-job/${id}`).then((res) => res.json()).then((data) => setJob(data))
+            fetch(`https://app-tracking-system-2.onrender.com/users/all-users`).then((res) => res.json()).then((data) => {
                 let recruiterData = data.filter((user) => user.isAssigned === false && user.role === "recruiter");
                 setRecruiters(recruiterData);
             })
@@ -46,7 +46,7 @@ export const AssignRecruiter = () => {
         console.log("Form submitted");
         const newData = {...data, jobID:id};
         console.log(newData);
-        fetch("http://localhost:8080/recruiter/post-recruiter", {
+        fetch("https://app-tracking-system-2.onrender.com/recruiter/post-recruiter", {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newData)
@@ -58,13 +58,13 @@ export const AssignRecruiter = () => {
 
         console.log(data.recruiterID);
 
-        fetch(`http://localhost:8080/users/user/${data.recruiterID}`).then((res) => res.json()).then((data) => {
+        fetch(`https://app-tracking-system-2.onrender.com/users/user/${data.recruiterID}`).then((res) => res.json()).then((data) => {
             let recruiterData = data
             setSelectedRecruiter(recruiterData);
             // console.log(data);
         })
         
-        fetch(`http://localhost:8080/users/update-user/${data.recruiterID}`, {
+        fetch(`https://app-tracking-system-2.onrender.com/users/update-user/${data.recruiterID}`, {
             method: "PUT",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
